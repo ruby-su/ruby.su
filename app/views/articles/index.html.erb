@@ -1,0 +1,18 @@
+<h1>Главная</h1>
+
+<p>
+  <%= link_to 'Создать новость', new_article_path %>
+</p>
+
+<div class="news">
+  <% @articles.each do |article| %>
+    <%= div_for article do %>
+      <span class="date"><%= l article.published_at %></span>
+      <span class="title"><%= link_to article.title, article %></span>
+      <span><%= link_to 'Edit', edit_article_path(article) %></span>
+      <span><%= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete %></span>
+    <% end %>
+  <% end %>
+</div>
+
+
