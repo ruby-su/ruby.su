@@ -1,25 +1,14 @@
-<p id="notice"><%= notice %></p>
+<h1><%= @article.title %></h1>
+
+<div class="date"><%= l @article.published_at %></div>
+<div class="user"><%= @article.user.nick %></div>
+
+<%= raw textilize(@article.body) %>
+
+<% permitted_to? :edit, @article do %>
+  <%= link_to 'Редактировать', edit_article_path(@article) %> 
+<% end %>
 
 <p>
-  <b>Title:</b>
-  <%= @article.title %>
+  <%= link_to 'Назад', articles_path %>
 </p>
-
-<p>
-  <b>Body:</b>
-  <%= @article.body %>
-</p>
-
-<p>
-  <b>Published at:</b>
-  <%= @article.published_at %>
-</p>
-
-<p>
-  <b>User:</b>
-  <%= @article.user_id %>
-</p>
-
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>

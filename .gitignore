@@ -1,4 +1,5 @@
 .bundle
+config/initializers/_secrets.rb
 db/*.sqlite3
 db/schema.rb
 log/*.log

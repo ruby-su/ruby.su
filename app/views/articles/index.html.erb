@@ -9,8 +9,8 @@
     <%= div_for article do %>
       <span class="date"><%= l article.published_at %></span>
       <span class="title"><%= link_to article.title, article %></span>
-      <span><%= link_to 'Edit', edit_article_path(article) %></span>
-      <span><%= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete %></span>
+      <span><%= link_to 'Редактировать', edit_article_path(article) if permitted_to? :edit, article %></span>
+      <span><%= link_to 'Удалить', article, :confirm => 'Вы уверены?', :method => :delete if permitted_to? :destroy, :article %></span>
     <% end %>
   <% end %>
 </div>

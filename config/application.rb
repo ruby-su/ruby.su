@@ -39,15 +39,6 @@ module RubySu
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
 
-    config.action_mailer.smtp_settings = {
-      :address              => "smtp.gmail.com",
-      :port                 => 587,
-      :domain               => 'ruby.su',
-      :user_name            => 'admin@ruby.su',
-      :password             => 'Ruby4dm1n',
-      :authentication       => 'plain',
-      :enable_starttls_auto => true
-    }
-
   end
 end
+

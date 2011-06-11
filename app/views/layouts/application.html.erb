@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RubySu</title>
+  <title>ruby.su</title>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
@@ -11,6 +11,9 @@
 <div style="float:right">
   <% if user_signed_in? %>
     <%= image_tag current_user.avatar.url(:thumb) %> <%= current_user.nick %>
+  <% else %>
+    <%= link_to 'Войти', new_user_session_path %>
+    <%= link_to 'Зарегистрироваться', new_user_registration_path %>
   <% end %>
 </div>
 
