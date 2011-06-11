@@ -1,10 +1,11 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-before_filter :print_secret
+  before_filter :set_current_user
 
-def print_secret
-  logger.debug ENV['RUBY_SU_FACEBOOK_APP_SECRET']
-end
+  protected
+  def set_current_user
+    Authorization.current_user = current_user
+  end
 
 end

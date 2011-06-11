@@ -1,6 +1,4 @@
 RubySu::Application.routes.draw do
-#  match "/users/auth/facebook/callback" => "users/omniauth_callbacks#facebook"
-
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   resources :articles

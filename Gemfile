@@ -25,6 +25,7 @@ gem 'mysql2'
 
 gem 'devise'
 gem "oa-oauth", :require => "omniauth/oauth"
+gem "declarative_authorization"
 gem "paperclip"
 gem "russian"
 

@@ -1,7 +1,6 @@
 class ArticlesController < ApplicationController
-
   before_filter :authenticate_user!, :except => [ :index, :show ]
-  
+  filter_resource_access
 
   # GET /articles
   # GET /articles.xml
