@@ -5,6 +5,8 @@
 
 <%= raw textilize(@article.body) %>
 
+<div class="tags">Теги: <%= @article.tag_list.join(", ") %></div>
+
 <% permitted_to? :edit, @article do %>
   <%= link_to 'Редактировать', edit_article_path(@article) %> 
 <% end %>
