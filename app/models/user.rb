@@ -35,6 +35,9 @@ class User < ActiveRecord::Base
       end
     end
 
+    user = User.find_by_uid_and_provider(oauth['uid'], oauth['provider'])
+    return user if user
+
     user = User.new(:uid => oauth['uid'],
       :provider => oauth['provider'],
       :password => Devise.friendly_token[0,20], 
