@@ -43,11 +43,13 @@ class User < ActiveRecord::Base
       :password => Devise.friendly_token[0,20], 
       :confirmed_at => Time.now,
       :full_name => data["name"],
+      :location => data["location"]
     )
+
+    user.email = data["email"] if data["email"]
 
     case oauth['provider']
       when 'facebook'
-        user.email = data["email"]
         user.nick = data["name"]
         avatar_url = oauth["user_info"]["image"].sub(/square/, 'large')
         user.avatar = avatar_io(avatar_url)
@@ -55,8 +57,10 @@ class User < ActiveRecord::Base
         user.nick = data["screen_name"]
         #:? =>  data["url"]
         #:? => data["description"]
-        user.location = data["location"]
         user.avatar = avatar_io(data["profile_image_url"])
+      when 'github'
+        user.nick = data["login"]
+        user.avatar = avatar_io("http://gravatar.com/avatar/#{data['gravatar_id']}?s=512") if data['gravatar_id']
     end
     user.save
     user

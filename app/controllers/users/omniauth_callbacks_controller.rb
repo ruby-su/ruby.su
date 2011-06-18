@@ -2,6 +2,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   before_filter :process_oauth_callback
 
   def facebook; end
+  def github; end
   def twitter; end
 
   protected

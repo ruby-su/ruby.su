@@ -183,7 +183,8 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
 
   config.omniauth :facebook, "179900328729881", FACEBOOK_APP_SECURITY, :scope => %w{ email user_location user_photos }.join(',')
-  config.omniauth :twitter, "ZIFS3fNlyZS02yxS65Rpkg", TWITTER_APP_SECURITY
+  config.omniauth :github,   "192db91ce545311a19fc", GITHUB_APP_SECURITY
+  config.omniauth :twitter,  "ZIFS3fNlyZS02yxS65Rpkg", TWITTER_APP_SECURITY
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
