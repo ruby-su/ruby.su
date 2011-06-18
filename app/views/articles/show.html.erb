@@ -1,7 +1,7 @@
 <h1><%= @article.title %></h1>
 
 <div class="date"><%= l @article.published_at %></div>
-<div class="user"><%= @article.user.nick %></div>
+<div class="user"><%= @article.user.nick rescue '' %></div>
 
 <%= raw textilize(@article.body) %>
 
