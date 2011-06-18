@@ -4,6 +4,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def facebook; end
   def github; end
   def twitter; end
+  def vkontakte; end
 
   protected
   def process_oauth_callback

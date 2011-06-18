@@ -61,6 +61,11 @@ class User < ActiveRecord::Base
       when 'github'
         user.nick = data["login"]
         user.avatar = avatar_io("http://gravatar.com/avatar/#{data['gravatar_id']}?s=512") if data['gravatar_id']
+      when 'vkontakte'
+        user.full_name = oauth['user_info']['name']
+        user.nick = oauth['user_info']['nickname']
+        user.location = oauth['user_info']['location']
+        user.avatar = avatar_io(data['photo_big'])
     end
     user.save
     user
