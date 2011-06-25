@@ -2,6 +2,7 @@ RubySu::Application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   resources :articles
+  resources :acts_as_taggable_on_tags, :controller => 'tags', :path => 'tags'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
