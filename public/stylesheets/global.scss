@@ -1,0 +1,33 @@
+$width:    250px;
+$lineSpacing:       15px;
+
+$red:               #DE1E21;
+$redLight:          #F53324;
+$redDark:           #B41F24;
+$graphite:          #3B4444;
+$gray:              lighten( $graphite, 15%);
+$silver:            lighten( $graphite, 25%);
+$lightGray:         lighten( $graphite, 70%);
+
+@mixin border_radius {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+@mixin shadow {
+  -webkit-box-shadow: 0 0px 3px rgba(0,0,0,.20);
+	-moz-box-shadow: 0 0px 3px rgba(0,0,0,.20);
+  box-shadow: 0 0px 3px rgba(0,0,0,.20);
+}
+
+@mixin inner_glow {
+  -webkit-box-shadow:inset 0 0px 3px rgba(0,0,0,.20);
+	-moz-box-shadow:inset 0 0px 3px rgba(0,0,0,.20);
+  box-shadow:inset 0 0px 3px rgba(0,0,0,.20);
+}
+
+@mixin textStyle($size, $weight) {
+  font-size: $size;
+  font-weight: $weight;
+}

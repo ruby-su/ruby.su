@@ -8,3 +8,6 @@ tmp/
 config/database.yml
 Gemfile
 Gemfile.lock
+.DS_Store
+.rvmrc
+.sass-cache/*

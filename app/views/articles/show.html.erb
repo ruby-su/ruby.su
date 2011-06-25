@@ -3,14 +3,6 @@
 <div class="date"><%= l @article.published_at %></div>
 <div class="user"><%= @article.user.nick rescue '' %></div>
 
-<%= raw textilize(@article.body) %>
+
 
 <div class="tags">Теги: <%= @article.tag_list.join(", ") %></div>
-
-<% permitted_to? :edit, @article do %>
-  <%= link_to 'Редактировать', edit_article_path(@article) %> 
-<% end %>
-
-<p>
-  <%= link_to 'Назад', articles_path %>
-</p>
