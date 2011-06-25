@@ -1,0 +1,3 @@
+<h1>Теги</h1>
+
+<%= raw @tags.map { |tag| link_to tag.name, tag }.join(', ') %>
