@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.xml
   def index
-    @articles = Article.all
+    @articles = Article.order("published_at DESC")
 
     respond_to do |format|
       format.html # index.html.erb
