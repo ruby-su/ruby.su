@@ -20,27 +20,59 @@
   </script>
 </head>
 <body>
+  <div id="wrapper">
+    <header class="outside" id="userMenu">
+      <nav>
+        <% if user_signed_in? %>
+          <span>Привет,
+          <% if current_user.nick? %>
+            <%= current_user.nick %>!
+          <% else %>
+            <%= current_user.full_name %>!
+          <% end %>
+          </span>
 
-<div style="float:right">
-  <% if user_signed_in? %>
-    <%= image_tag current_user.avatar.url(:thumb) %> <%= current_user.nick %>
-  <% else %>
-    <%= link_to 'Войти', new_user_session_path %>
-    <%= link_to 'Зарегистрироваться', new_user_registration_path %>
-  <% end %>
-</div>
+          <%= link_to 'Создать новость', new_article_path %>
+          <%= link_to 'Выйти', destroy_user_session_path %>
+        <% else %>
+          <%= link_to 'Войти', new_user_session_path %>
+          <%= link_to 'Зарегистрироваться', new_user_registration_path %>
+        <% end %>
+      </nav>
+    </header>
+    
+    <section id="container">
+      <header id="header">
+        <nav>
+          <%= link_to root_path, :id => 'logo' do %>
+          <div id="star"></div>
+          <div id="rubySu">Ruby<span id="dot">.</span>su</div>
+          <div id="slogan"><span>мы говорим</span> на другом языке</div>
+          <% end %>
+        </nav>
+      </header>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+      <section id="articles">
+        <% if notice %>
+          <p class="notice"><%= notice %></p>
+        <% end %>
 
-  <%= yield %>
+        <% if alert %>
+          <p class="alert"><%= alert %></p>
+        <% end %>
+        
+        <%= yield %>
+      </section>
+    </section>
 
-<div id="footer">
-  <%= link_to 'github', 'http://github.com/ruby-su/ruby.su' %> 
-  <%= link_to 'facebook', 'http://www.facebook.com/pages/rubysu/205439092834000' %>
-  <%= link_to 'twitter', 'http://twitter.com/ruby_su_comrade' %>
-  <%= link_to 'вконтакте', 'http://vkontakte.ru/rubysu' %>
-</div>
-
+    <footer class="outside" id="social">
+      <nav>
+        <%= link_to 'github', 'http://github.com/ruby-su/ruby.su' %> 
+        <%= link_to 'facebook', 'http://www.facebook.com/pages/rubysu/205439092834000' %>
+        <%= link_to 'twitter', 'http://twitter.com/ruby_su_comrade' %>
+        <%= link_to 'вконтакте', 'http://vkontakte.ru/rubysu' %>
+      </nav>
+    </footer>
+  </div>
 </body>
 </html>

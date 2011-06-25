@@ -1,23 +1,31 @@
-<div style="margin:20px 0; padding: 10px 0; border-bottom: 1px solid #ccc; text-align:center">
-<h2>Салют, комерадес!</h2>
+<article>
+  <h1>Салют, комерадес!</h1>
+  <p>Мы тут решили всё переделать.<br />
+     Подробности на <%= link_to 'github', 'http://github.com/ruby-su/ruby.su' %> 
+     или на <%= link_to 'facebook', 'http://www.facebook.com/pages/rubysu/205439092834000' %>
+  </p>
+</article>
 
-<p>Мы тут решили всё переделать. Подробности на <%= link_to 'github', 'http://github.com/ruby-su/ruby.su' %> или на <%= link_to 'facebook', 'http://www.facebook.com/pages/rubysu/205439092834000' %></p>.
-</div>
-
-<h1>Главная</h1>
-
-<p>
-  <%= link_to 'Создать новость', new_article_path %>
-</p>
-
-<div class="news">
-  <% @articles.each do |article| %>
-    <%= div_for article do %>
-      <span class="date"><%= l article.published_at %></span>
-      <span class="title"><%= link_to article.title, article %></span>
-      <span><%= link_to 'Редактировать', edit_article_path(article) if permitted_to? :edit, article %></span>
-      <span><%= link_to 'Удалить', article, :confirm => 'Вы уверены?', :method => :delete if permitted_to? :destroy, :article %></span>
-    <% end %>
+<% @articles.each do |article| %>
+<article>
+  <header>
+    <small><%= article.published_at.strftime('%d %m') %></small>
+    <h1><%= article.title %></h1>
+  </header>
+  
+  <%= raw textilize (article.body) %>
+  
+  <% permitted_to? :edit, article do %>
+  <footer>
+    <nav>
+      <%= link_to 'Редактировать', edit_article_path(article) %>
+      <%= link_to 'Удалить', article, :confirm => 'Вы уверены?', :method => :delete %>
+    </nav>
+  </footer>
   <% end %>
-</div>
+</article>
+<% end %>
+
+
+
 

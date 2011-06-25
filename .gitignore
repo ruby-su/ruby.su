@@ -9,4 +9,6 @@ config/database.yml
 Gemfile
 Gemfile.lock
 .*.swp
-
+.DS_Store
+.rvmrc
+.sass-cache/*
