@@ -108,6 +108,20 @@ article {
     margin-bottom: $lineSpacing;
   }
   
+  ul {
+    margin-bottom: $lineSpacing;
+    color: $red;
+    line-height: 20px;
+  }
+  
+  li {
+    font-size: 1.4em;
+  }
+  
+  li:first-line {
+    color: black;
+  }
+  
   small {
     position: absolute;
     width: 40px;
