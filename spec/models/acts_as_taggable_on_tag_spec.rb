@@ -23,8 +23,7 @@ describe ActsAsTaggableOn::Tag do
 
   context :to_param do
     it "returns permalink value of the tag" do
-      pending
-      Tag.new(:permalink => 'ruby').to_param.should == 'ruby'
+      Tag.create(:name => 'ruby').to_param.should == 'ruby'
     end
 
   end
