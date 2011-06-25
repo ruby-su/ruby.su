@@ -6,7 +6,7 @@ authorization do
 
   role :regular do
     includes :guest
-    has_permission_on :articles, :to => [ :new, :create ]
+    has_permission_on :articles, :to => [ :new, :create, :autocomplete_tag_name ]
     has_permission_on :articles, :to => [ :edit, :update ] do
       if_attribute :user => is { user }
     end

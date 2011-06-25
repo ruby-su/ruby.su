@@ -8,3 +8,5 @@ tmp/
 config/database.yml
 Gemfile
 Gemfile.lock
+.*.swp
+

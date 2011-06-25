@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :tag_list %><br />
-    <%= f.text_field :tag_list %>
+    <%= f.autocomplete_field :tag_list, autocomplete_tag_name_articles_path, :"data-delimiter" => ', ' %>
   </div>
   <div class="field">
     <%= f.label :published_at %><br />

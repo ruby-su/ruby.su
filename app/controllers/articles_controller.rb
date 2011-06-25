@@ -1,6 +1,8 @@
 class ArticlesController < ApplicationController
   before_filter :authenticate_user!, :except => [ :index, :show ]
-  filter_resource_access
+  filter_resource_access :additional_collection => :autocomplete_tag_name
+
+  autocomplete :tag, :name, :class_name => 'ActsAsTaggableOn::Tag'
 
   # GET /articles
   # GET /articles.xml

@@ -1,8 +1,6 @@
 require 'spec_helper'
 
 describe TagsController do
-  include Devise::TestHelpers
-
   context 'show' do
     before do
       @tag = mock_model(ActsAsTaggableOn::Tag, :name => 'ruby')

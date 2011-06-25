@@ -29,6 +29,7 @@ gem 'devise'
 gem "jquery-rails"
 gem "oa-oauth", :require => "omniauth/oauth"
 gem "paperclip"
+gem 'rails3-jquery-autocomplete'
 gem "RedCloth"
 gem "russian"
 
@@ -36,6 +37,7 @@ gem "russian"
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
 group :development, :test do
+  gem 'factory_girl_rails'
   gem 'rspec-rails'
   gem 'webrat'
 end
