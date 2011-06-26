@@ -110,16 +110,17 @@ article {
   
   ul {
     margin-bottom: $lineSpacing;
-    color: $red;
     line-height: 20px;
   }
   
   li {
     font-size: 1.4em;
-  }
-  
-  li:first-line {
-    color: black;
+    color: $red;
+    
+    span {
+      font: inherit;
+      color: black;
+    }
   }
   
   small {
