@@ -10,7 +10,7 @@
 <article>
   <header>
     <small><%= article.published_at.strftime('%d %m') %></small>
-    <h1><%= article.title %></h1>
+    <h2><%= link_to article.title, article %></h2>
   </header>
   
   <%= raw textilize (article.body) %>
