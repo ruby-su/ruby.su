@@ -1,15 +1,25 @@
 <article>
   <header>
+    <small><%= @article.published_at.strftime('%d %m') %></small>
     <h1><%= @article.title %></h1>
-    <div class="date"><%= l @article.published_at %></div>
-    <div class="user"><%= @article.user.nick rescue '' %></div>
   </header>
+  
+  <%= raw textilize(@article.body) %>
+  
 
-  <div class="body"><%= raw textilize(@article.body) %></div>
-  <div class="tags">Теги: <%= raw @article.tags.map { |tag| link_to tag.name, tag }.join(", ") %></div>
-
-  <% permitted_to? :edit, @article do %>
-    <%= link_to 'Редактировать', edit_article_path(@article) %> 
-  <% end %>
+  <footer>
+    <nav class="author">
+      Автор: <%= @article.user.nick rescue '' %>
+    </nav>
+    <nav class="tags">
+      Теги: <%= raw @article.tags.map { |tag| link_to tag.name, tag }.join(", ") %>
+    </nav>
+    <% permitted_to? :edit, @article do %>
+    <nav>
+      <%= link_to 'Редактировать', edit_article_path(@article) %>
+      <%= link_to 'Удалить', @article, :confirm => 'Вы уверены?', :method => :delete %>
+    </nav>
+    <% end %>
+  </footer>
 </article>
 

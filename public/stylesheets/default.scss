@@ -7,7 +7,7 @@
 
 #container {
   width: $width - 175;
-  padding: 210px 50px 60px 125px;
+  padding: 160px 50px 60px 125px;
   background: white;
   @include border_radius;
   @include shadow;
@@ -20,7 +20,7 @@ input[type="text"], textarea {
 #header {
   position: absolute;
   height: 65px;
-  margin: -114px 0 0 -60px;
+  margin: -54px 0 0 -60px;
 }
 
 .outside {
@@ -94,70 +94,5 @@ input[type="text"], textarea {
   span {
     margin-right: 28px;
     font: inherit;
-  }
-}
-
-article {
-  h1 {
-    font-family: PTSerif-Caption;
-    font-size: 2em;
-    color: $red;
-    margin-top: 70px;
-    margin-bottom: 10px;
-    margin-left: -1px;
-  }
-  
-  p {
-    font-size: 1.4em;
-    margin-bottom: $lineSpacing;
-  }
-  
-  ul, ol {
-    margin-bottom: $lineSpacing;
-    margin-left: $lineSpacing;
-    line-height: $lineSpacing;
-  }
-  
-  li {
-    font-size: 1.4em;
-    margin-bottom: 5px;
-  }
-  
-  ul {
-    li {
-      list-style: url(/images/bullet.png) inside;
-    }
-  }
-  
-  ol {
-    li {
-      list-style: decimal inside; 
-    }
-  }
-  
-  small {
-    position: absolute;
-    width: 40px;
-    margin-top: 10px;
-    margin-left: -55px;
-    text-align: right;
-    color: $silver;
-  }
-  
-  pre {
-    background: black;
-    color: white;
-    padding: 10px;
-  }
-  
-  code {
-    font-family: Courier;
-    font-size: 1em;
-  }
-}
-
-article:first-child {
-  h1 {
-    margin-top: 0 !important;
   }
 }

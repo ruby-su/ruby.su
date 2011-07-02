@@ -1,22 +1,32 @@
-<% @articles.each do |article| %>
-<article>
-  <header>
-    <small><%= article.published_at.strftime('%d %m') %></small>
-    <h2><%= link_to article.title, article %></h2>
-  </header>
+<section id="articles">
   
-  <%= raw textilize(article.body) %>
+  <% @articles.each do |article| %>
+  <article>
+    <header>
+      <small><%= article.published_at.strftime('%d %m') %></small>
+      <h2><%= link_to article.title, article %></h2>
+    </header>
   
-  <% permitted_to? :edit, article do %>
-  <footer>
-    <nav>
-      <%= link_to 'Редактировать', edit_article_path(article) %>
-      <%= link_to 'Удалить', article, :confirm => 'Вы уверены?', :method => :delete %>
-    </nav>
-  </footer>
+    <%= raw textilize(article.body) %>
+  
+    <footer>
+      <nav class="author">
+        Автор: <%= article.user.nick rescue '' %>
+      </nav>
+      <nav class="tags">
+        Теги: <%= raw article.tags.map { |tag| link_to tag.name, tag }.join(", ") %>
+      </nav>
+      <% permitted_to? :edit, article do %>
+      <nav>
+        <%= link_to 'Редактировать', edit_article_path(article) %>
+        <%= link_to 'Удалить', article, :confirm => 'Вы уверены?', :method => :delete %>
+      </nav>
+      <% end %>
+    </footer>
+  </article>
   <% end %>
-</article>
-<% end %>
+  
+</section>
 
 
 
