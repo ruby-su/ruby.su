@@ -1,8 +1,25 @@
-<h1><%= @tag.name %></h1>
+<h1 class="tagHeader">Статьи по тегу <%= @tag.name %></h1>
 
-<% @articles.each do |article| %>
-  <%= div_for article do %>
-    <span class="date"><%= l article.published_at %></span>
-    <%= link_to article.title, article %>
+<section id="articles">
+  
+  <% @articles.each do |article| %>
+  <article>
+    <header>
+      <small><%= article.published_at.strftime('%d %m') %></small>
+      <h2><%= link_to article.title, article %></h2>
+    </header>
+  
+    <%= raw textilize(article.body) %>
+  
+    <% permitted_to? :edit, article do %>
+    <footer>
+      <nav>
+        <%= link_to 'Редактировать', edit_article_path(article) %>
+        <%= link_to 'Удалить', article, :confirm => 'Вы уверены?', :method => :delete %>
+      </nav>
+    </footer>
+    <% end %>
+  </article>
   <% end %>
-<% end %>
+  
+</section>
