@@ -1,17 +1,20 @@
 @import 'global.scss';
 
 #wrapper {
-  width: 460px;
+  width: $width;
   margin: 0 auto;
-  padding: 100px 0;
 }
 
 #container {
-  width: 305px;
-  padding: 210px 30px 60px 125px;
+  width: $width - 175;
+  padding: 210px 50px 60px 125px;
   background: white;
   @include border_radius;
   @include shadow;
+}
+
+input[type="text"], textarea {
+  width: $width - 185;
 }
 
 #header {
@@ -21,7 +24,7 @@
 }
 
 .outside {
-  width: 440px;
+  width: $width - 20;
   height: $lineSpacing + 10;
   padding: 10px 10px 0 10px;
 }
@@ -111,6 +114,7 @@ article {
   
   ul, ol {
     margin-bottom: $lineSpacing;
+    margin-left: $lineSpacing;
     line-height: $lineSpacing;
   }
   
@@ -145,50 +149,15 @@ article {
     color: white;
     padding: 10px;
   }
+  
+  code {
+    font-family: Courier;
+    font-size: 1em;
+  }
 }
 
 article:first-child {
   h1 {
     margin-top: 0 !important;
   }
-}
-
-input {
-  height: 20px;
-  @include inner_glow;
-  @include border_radius;
-}
-
-input[type="submit"] {
-  height: 20px;
-  margin: $lineSpacing 0;
-  padding: 0 10px;
-  @include inner_glow;
-  @include border_radius;
-  color: white;
-	background: #F53324;
-	background: -webkit-gradient(linear, left top, left bottom, from(#F53324), to(#B41F24));
-	background: -moz-linear-gradient(top,  #F53324,  #B41F24);
-	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#F53324', endColorstr='#B41F24');
-	
-	&:hover {
-  	background: #FF755E;
-  	background: -webkit-gradient(linear, left top, left bottom, from(#FF755E), to(#C41F24));
-  	background: -moz-linear-gradient(top,  #FF755E,  #C41F24);
-  	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF755E', endColorstr='#C41F24');
-	}
-	
-	&:active {
-  	background: #E63324;
-  	background: -webkit-gradient(linear, left top, left bottom, from(#E63324), to(#961F24));
-  	background: -moz-linear-gradient(top,  #E63324,  #961F24);
-  	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#E63324', endColorstr='#961F24');
-	}
-}
-
-textarea {
-  border: none;
-  resize:vertical;
-  @include inner_glow;
-  @include border_radius;
 }

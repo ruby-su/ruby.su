@@ -4,10 +4,10 @@ html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote,
 a, abbr, acronym, address, big, cite,
 del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-u, i, center,
+small, strike, sub, sup, tt, var,
+u, center,
 dl, dt, dd, ol, ul, li,
-fieldset, form, input, label, legend,
+fieldset, form, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
 figure, figcaption, footer, header, hgroup, 
@@ -40,7 +40,6 @@ body {
 }
 
 h1 {
-  @include textStyle( 1.2em, normal);
   line-height: $lineSpacing * 2;
   
   &:first-letter {
@@ -49,7 +48,6 @@ h1 {
 }
 
 p {
-  @include textStyle( 1.4em, normal);
   line-height: $lineSpacing;
   margin-left: 1px;
 }
@@ -66,4 +64,61 @@ a {
   &:active {
     color: $graphite;
   }
+}
+
+b, strong {
+  font-family: PTSans-Bold;
+}
+
+.field {
+  margin-bottom: $lineSpacing;
+}
+
+label {
+  @include textStyle( 1.2em, normal)
+}
+
+input[type="text"], textarea {
+  padding: 0 5px !important;
+}
+
+input {
+  height: 20px;
+  border: none;
+  @include inner_glow;
+  @include border_radius;
+}
+
+input[type="submit"] {
+  margin: $lineSpacing 0;
+  padding: 0 10px;
+  @include inner_glow;
+  @include border_radius;
+  color: white;
+	background: #F53324;
+	background: -webkit-gradient(linear, left top, left bottom, from(#F53324), to(#B41F24));
+	background: -moz-linear-gradient(top,  #F53324,  #B41F24);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#F53324', endColorstr='#B41F24');
+	
+	&:hover {
+  	background: #FF755E;
+  	background: -webkit-gradient(linear, left top, left bottom, from(#FF755E), to(#C41F24));
+  	background: -moz-linear-gradient(top,  #FF755E,  #C41F24);
+  	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF755E', endColorstr='#C41F24');
+	}
+	
+	&:active {
+  	background: #E63324;
+  	background: -webkit-gradient(linear, left top, left bottom, from(#E63324), to(#961F24));
+  	background: -moz-linear-gradient(top,  #E63324,  #961F24);
+  	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#E63324', endColorstr='#961F24');
+	}
+}
+
+textarea {
+  border: none;
+  resize:vertical;
+  padding: 5px !important;
+  @include inner_glow;
+  @include border_radius;
 }
