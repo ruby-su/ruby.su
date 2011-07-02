@@ -23,4 +23,9 @@ describe 'articles/show.html.erb' do
     render
     rendered.should have_tag("p", :content => "We’ve added Twitter!")
   end
+
+  it "renders comments" do
+    render 
+    pending
+  end
 end

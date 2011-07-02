@@ -3,6 +3,7 @@ RubySu::Application.routes.draw do
 
   resources :articles do
     get :autocomplete_tag_name, :on => :collection
+    put :add_comment, :on => :member
   end
   resources :acts_as_taggable_on_tags, :controller => 'tags', :path => 'tags'
 
