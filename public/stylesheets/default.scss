@@ -101,6 +101,7 @@ article {
     color: $red;
     margin-top: 70px;
     margin-bottom: 10px;
+    margin-left: -1px;
   }
   
   p {
@@ -108,28 +109,45 @@ article {
     margin-bottom: $lineSpacing;
   }
   
-  ul {
+  ul, ol {
     margin-bottom: $lineSpacing;
-    line-height: 20px;
+    line-height: $lineSpacing;
   }
   
   li {
     font-size: 1.4em;
-    color: $red;
-    
-    span {
-      font: inherit;
-      color: black;
+    margin-bottom: 5px;
+  }
+  
+  ul {
+    li {
+      list-style: url(/images/bullet.png) inside;
+    }
+  }
+  
+  ol {
+    li {
+      list-style: decimal inside; 
     }
   }
   
   small {
     position: absolute;
     width: 40px;
-    margin-top: 3px;
+    margin-top: 10px;
     margin-left: -55px;
     text-align: right;
     color: $silver;
+  }
+  
+  pre {
+    background: black;
+    color: white;
+    padding: 10px;
+  }
+  
+  code {
+    font-size: 1.2em;
   }
 }
 
