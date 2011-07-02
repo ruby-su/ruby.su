@@ -83,12 +83,13 @@ article p {
   margin-bottom: 15px; }
 article ul {
   margin-bottom: 15px;
-  color: #de1e21;
   line-height: 20px; }
 article li {
-  font-size: 1.4em; }
-article li:first-line {
-  color: black; }
+  font-size: 1.4em;
+  color: #de1e21; }
+  article li span {
+    font: inherit;
+    color: black; }
 article small {
   position: absolute;
   width: 40px;
