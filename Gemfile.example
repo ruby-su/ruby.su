@@ -31,7 +31,7 @@ gem "oa-oauth", :require => "omniauth/oauth"
 gem "paperclip"
 gem 'rails3-jquery-autocomplete'
 gem "RedCloth"
-gem "russian"
+gem 'russian', :git => "https://github.com/yaroslav/russian.git"
 
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators

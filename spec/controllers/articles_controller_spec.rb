@@ -2,11 +2,11 @@ require 'spec_helper'
 
 describe ArticlesController do
   context "(authenticated user)" do
+
     login_user
 
     describe :autocomplete_tag_name do
       it "returns 200 status code" do
-        pending "TODO: we can't make it work!! please help"
         xhr :get, :autocomplete_tag_name, { :term => 'hackathon' }
         response.code.should == '200'
       end
