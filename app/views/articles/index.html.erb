@@ -5,7 +5,7 @@
     <h2><%= link_to article.title, article %></h2>
   </header>
   
-  <%= raw textilize (article.body) %>
+  <%= raw textilize(article.body) %>
   
   <% permitted_to? :edit, article do %>
   <footer>
