@@ -4,6 +4,11 @@
 }
 
 @font-face {
+  font-family: PTSans-Bold;
+  src: url('/fonts/PTS75F.ttf');
+}
+
+@font-face {
   font-family: PTSans-Italic;
   src: url('/fonts/PTS56F.ttf');
 }

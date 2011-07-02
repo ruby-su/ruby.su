@@ -1,5 +1,9 @@
-<h1>New article</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', articles_path %>
+<article>
+  <header>
+    <h1>Новая статья</h1>
+  </header>
+  <%= render 'form' %>
+  <footer>
+    <%= link_to 'Отменить', articles_path %>
+  </footer>
+</article>

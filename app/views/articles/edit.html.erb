@@ -1,6 +1,11 @@
-<h1>Editing article</h1>
+<article>
+  <header>
+    <h1>Правка статьи</h1>
+  </header>
+  <%= render 'form' %>
+  <footer>
+    <%= link_to 'Отменить', @article %>
+  </footer>
+</article>
 
-<%= render 'form' %>
 
-<%= link_to 'Show', @article %> |
-<%= link_to 'Back', articles_path %>
