@@ -52,17 +52,11 @@
         </nav>
       </header>
 
-      <section id="articles">
-        <% if notice %>
-          <p class="notice"><%= notice %></p>
-        <% end %>
-
-        <% if alert %>
-          <p class="alert"><%= alert %></p>
-        <% end %>
-        
-        <%= yield %>
-      </section>
+      <% if notice %><p class="notice"><%= notice %></p><% end %>
+      <% if alert %><p class="alert"><%= alert %></p><% end %>
+       
+      <%= yield %>
+      
     </section>
 
     <footer class="outside" id="social">

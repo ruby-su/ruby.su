@@ -39,7 +39,7 @@ body {
   background: $lightGray;
 }
 
-h1 {
+h1, h2 {
   line-height: $lineSpacing * 2;
   
   &:first-letter {
@@ -47,9 +47,82 @@ h1 {
   }
 }
 
+h1 {
+  font-family: PTSerif-Caption;
+  font-size: 2em;
+  color: $red;
+  margin-top: 70px;
+  margin-bottom: 10px;
+  margin-left: -1px;
+}
+
+h2 {
+  font-family: PTSerif-Caption;
+  font-size: 2em;
+  color: $red;
+  margin-top: 70px;
+  margin-bottom: 10px;
+  margin-left: -1px;
+  
+  a {
+    color: $red;
+    font: inherit;
+   
+   &:hover {       
+    color: $redLight;
+    text-decoration: none;
+   }
+  }
+}
+
 p {
-  line-height: $lineSpacing;
+  font-size: 1.4em;
   margin-left: 1px;
+  margin-bottom: $lineSpacing;
+  line-height: $lineSpacing;
+}
+
+ul, ol {
+  margin-bottom: $lineSpacing;
+  margin-left: $lineSpacing;
+  line-height: $lineSpacing;
+}
+
+li {
+  font-size: 1.4em;
+  margin-bottom: 5px;
+}
+
+ul {
+  li {
+    list-style: url(/images/bullet.png) inside;
+  }
+}
+
+ol {
+  li {
+    list-style: decimal inside; 
+  }
+}
+
+small {
+  position: absolute;
+  width: 40px;
+  margin-top: 10px;
+  margin-left: -55px;
+  text-align: right;
+  color: $silver;
+}
+
+pre {
+  background: black;
+  color: white;
+  padding: 10px;
+}
+
+code {
+  font-family: Courier;
+  font-size: 10px;
 }
 
 a {

@@ -4,7 +4,7 @@
 
 #container {
   width: 585px;
-  padding: 210px 50px 60px 125px;
+  padding: 160px 50px 60px 125px;
   background: white;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -19,7 +19,7 @@ input[type="text"], textarea {
 #header {
   position: absolute;
   height: 65px;
-  margin: -114px 0 0 -60px; }
+  margin: -54px 0 0 -60px; }
 
 .outside {
   width: 740px;
@@ -73,42 +73,3 @@ input[type="text"], textarea {
   #slogan span {
     margin-right: 28px;
     font: inherit; }
-
-article h1 {
-  font-family: PTSerif-Caption;
-  font-size: 2em;
-  color: #de1e21;
-  margin-top: 70px;
-  margin-bottom: 10px;
-  margin-left: -1px; }
-article p {
-  font-size: 1.4em;
-  margin-bottom: 15px; }
-article ul, article ol {
-  margin-bottom: 15px;
-  margin-left: 15px;
-  line-height: 15px; }
-article li {
-  font-size: 1.4em;
-  margin-bottom: 5px; }
-article ul li {
-  list-style: url(/images/bullet.png) inside; }
-article ol li {
-  list-style: decimal inside; }
-article small {
-  position: absolute;
-  width: 40px;
-  margin-top: 10px;
-  margin-left: -55px;
-  text-align: right;
-  color: #768888; }
-article pre {
-  background: black;
-  color: white;
-  padding: 10px; }
-article code {
-  font-family: Courier;
-  font-size: 1em; }
-
-article:first-child h1 {
-  margin-top: 0 !important; }
