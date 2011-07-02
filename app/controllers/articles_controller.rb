@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   before_filter :authenticate_user!, :except => [ :index, :show ]
-  filter_resource_access :additional_collection => :autocomplete_tag_name
+  filter_resource_access :additional_collection => :autocomplete_tag_name,
+    :additional_member => :add_comment
 
   autocomplete :tag, :name, :class_name => 'ActsAsTaggableOn::Tag'
 
@@ -72,6 +73,14 @@ class ArticlesController < ApplicationController
         format.xml  { render :xml => @article.errors, :status => :unprocessable_entity }
       end
     end
+  end
+
+  def add_comment
+    @comment = Comment.build_from(@article, current_user.id, params[:comment])
+    @comment.parent_id = params[:parent_id]
+    @comment.save
+
+    redirect_to @article
   end
 
   # DELETE /articles/1
