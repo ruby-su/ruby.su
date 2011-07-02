@@ -103,8 +103,6 @@ article pre {
   background: black;
   color: white;
   padding: 10px; }
-article code {
-  font-size: 1.2em; }
 
 article:first-child h1 {
   margin-top: 0 !important; }
